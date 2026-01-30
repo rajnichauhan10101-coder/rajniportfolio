@@ -1,6 +1,24 @@
-import { GraduationCap, Award, Calendar } from "lucide-react";
+import { GraduationCap, Award, Calendar, BookOpen } from "lucide-react";
 
 const Education = () => {
+  const educationItems = [
+    {
+      title: "Bachelor of Computer Applications (BCA)",
+      institute: "Khalsa College of Mohali Technology & Business Studies",
+      duration: "2022 - 2025",
+    },
+    {
+      title: "Web Design Course",
+      institute: "Winsoft Institute, Mohali",
+      duration: "Certificate Course",
+    },
+    {
+      title: "Python Programming Course",
+      institute: "CS Infotech, Chandigarh",
+      duration: "6 Months",
+    },
+  ];
+
   return (
     <section id="education" className="bg-card">
       <div className="section-container">
@@ -27,17 +45,21 @@ const Education = () => {
               </div>
             </div>
             
-            <div className="border-l-2 border-accent pl-6 space-y-2">
-              <h4 className="text-lg font-semibold text-foreground">
-                Bachelor of Computer Applications (BCA)
-              </h4>
-              <p className="text-muted-foreground">
-                Khalsa College of Mohali Technology & Business Studies
-              </p>
-              <div className="flex items-center gap-2 text-accent">
-                <Calendar className="w-4 h-4" />
-                <span className="font-medium">2022 - 2025</span>
-              </div>
+            <div className="space-y-6">
+              {educationItems.map((item, index) => (
+                <div key={index} className="border-l-2 border-accent pl-6 space-y-1">
+                  <h4 className="text-lg font-semibold text-foreground">
+                    {item.title}
+                  </h4>
+                  <p className="text-muted-foreground">
+                    {item.institute}
+                  </p>
+                  <div className="flex items-center gap-2 text-accent">
+                    <Calendar className="w-4 h-4" />
+                    <span className="font-medium text-sm">{item.duration}</span>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
           
@@ -76,7 +98,7 @@ const Education = () => {
                       Web Design Certificate
                     </h4>
                     <p className="text-sm text-muted-foreground mt-1">
-                      Professional certification in web design and development
+                      Winsoft Institute, Mohali
                     </p>
                   </div>
                 </div>
@@ -90,7 +112,7 @@ const Education = () => {
                       Python Certificate
                     </h4>
                     <p className="text-sm text-muted-foreground mt-1">
-                      Comprehensive Python programming and data analysis certification
+                      CS Infotech, Chandigarh (6 Months)
                     </p>
                   </div>
                 </div>
